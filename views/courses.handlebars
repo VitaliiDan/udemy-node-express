@@ -14,13 +14,16 @@
                     </div>
                     <div class="card-action actions">
                         <a href="/courses/{{id}}" target="_blank">open course</a>
-                        <a href="/courses/{{id}}/edit?allow=true">edit</a>
-                        <form action="/card/add" method="post">
-                            <input type="hidden" name="id" value="{{id}}">
-                            <button class="btn btn-primary">
-                                buy
-                            </button>
-                        </form>
+                        {{#if @root.isAuth}}
+                            <a href="/courses/{{id}}/edit?allow=true">edit</a>
+                            <form action="/card/add" method="post">
+                                <input type="hidden" name="id" value="{{id}}">
+
+                                <button class="btn btn-primary">
+                                    buy
+                                </button>
+                            </form>
+                        {{/if}}
                     </div>
                 </div>
             </div>

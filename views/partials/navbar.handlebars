@@ -8,28 +8,46 @@
                 <li><a href="/">main</a></li>
             {{/if}}
 
-            {{#if isAdd}}
-                <li class="active"><a href="/add">add new course</a></li>
-            {{else}}
-                <li><a href="/add">add new course</a></li>
-            {{/if}}
-
             {{#if isCourses}}
                 <li class="active"><a href="/courses">courses</a></li>
             {{else}}
                 <li><a href="/courses">courses</a></li>
             {{/if}}
 
+            {{#if isAuth}}
+                {{#if isAdd}}
+                    <li class="active"><a href="/add">add new course</a></li>
+                {{else}}
+                    <li><a href="/add">add new course</a></li>
+                {{/if}}
+
+                {{#if isCard}}
+                    <li class="active"><a href="/card">basket</a></li>
+                {{else}}
+                    <li><a href="/card">basket</a></li>
+                {{/if}}
+
+                {{#if isOrder}}
+                    <li class="active"><a href="/orders">orders</a></li>
+                {{else}}
+                    <li><a href="/orders">orders</a></li>
+                {{/if}}
+
+                <li><a href="/auth/logout">log out</a></li>
+            {{else}}
+                {{#if isLogin}}
+                    <li class="active"><a href="/auth/login#login">logIn</a></li>
+                {{else}}
+                    <li><a href="/auth/login#login">logIn</a></li>
+                {{/if}}
+            {{/if}}
+
+
+
             {{#if isAbout}}
                 <li class="active"><a href="/about">about us</a></li>
             {{else}}
                 <li><a href="/about">about us</a></li>
-            {{/if}}
-
-            {{#if isCard}}
-                <li class="active"><a href="/card">basket</a></li>
-            {{else}}
-                <li><a href="/card">basket</a></li>
             {{/if}}
         </ul>
     </div>
